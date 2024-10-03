@@ -1,0 +1,436 @@
+Microsoft Windows [Version 10.0.22631.4169]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\infan>cd C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>cd C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>solr.cmd start
+Java 17 detected. Enabled workaround for SOLR-16463
+Java HotSpot(TM) 64-Bit Server VM warning: JVM cannot use large page memory because it does not have enough privilege to lock pages in memory.
+WARNING: A command line option has enabled the Security Manager
+WARNING: The Security Manager is deprecated and will be removed in a future release
+Failed to parse command-line arguments due to: Unrecognized option: --max-wait-secs
+
+usage: bin/solr status [-maxWaitSecs <SECS>] [--solr-url <URL>]
+
+List of options:
+ -maxWaitSecs <SECS>   Wait up to the specified number of seconds to see Solr running.
+    --solr-url <URL>   Address of the Solr Web application, defaults to: http://localhost:8983.
+
+Please see the Reference Guide for more tools documentation:
+https://solr.apache.org/guide/solr/latest/deployment-guide/solr-control-script-reference.html
+
+ERROR: Solr did not start or was not reachable. Check the logs for errors.
+
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>solr.cmd start
+
+ERROR: Process 22188 is already listening on port 8983. If this is Solr, please stop it first before starting (or use restart). If this is not Solr, then please choose a different port using -p PORT
+
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>taskkill /PID 22188 /F
+SUCCESS: The process with PID 22188 has been terminated.
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>solr.cmd start
+Java 17 detected. Enabled workaround for SOLR-16463
+Java HotSpot(TM) 64-Bit Server VM warning: JVM cannot use large page memory because it does not have enough privilege to lock pages in memory.
+WARNING: A command line option has enabled the Security Manager
+WARNING: The Security Manager is deprecated and will be removed in a future release
+Failed to parse command-line arguments due to: Unrecognized option: --max-wait-secs
+
+usage: bin/solr status [-maxWaitSecs <SECS>] [--solr-url <URL>]
+
+List of options:
+ -maxWaitSecs <SECS>   Wait up to the specified number of seconds to see Solr running.
+    --solr-url <URL>   Address of the Solr Web application, defaults to: http://localhost:8983.
+
+Please see the Reference Guide for more tools documentation:
+https://solr.apache.org/guide/solr/latest/deployment-guide/solr-control-script-reference.html
+
+ERROR: Solr did not start or was not reachable. Check the logs for errors.
+
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin\solr.in.cmd
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>echo %JAVA_HOME%
+C:\Program Files\Java\jdk-17
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>solr.cmd start
+
+ERROR: Process 20124 is already listening on port 8983. If this is Solr, please stop it first before starting (or use restart). If this is not Solr, then please choose a different port using -p PORT
+
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>netstat -ano | findstr :8983
+  TCP    127.0.0.1:8983         0.0.0.0:0              LISTENING       20124
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>taskkill /PID 20124 /F
+SUCCESS: The process with PID 20124 has been terminated.
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>solr.cmd start
+Java 17 detected. Enabled workaround for SOLR-16463
+Java HotSpot(TM) 64-Bit Server VM warning: JVM cannot use large page memory because it does not have enough privilege to lock pages in memory.
+WARNING: A command line option has enabled the Security Manager
+WARNING: The Security Manager is deprecated and will be removed in a future release
+Failed to parse command-line arguments due to: Unrecognized option: --max-wait-secs
+
+usage: bin/solr status [-maxWaitSecs <SECS>] [--solr-url <URL>]
+
+List of options:
+ -maxWaitSecs <SECS>   Wait up to the specified number of seconds to see Solr running.
+    --solr-url <URL>   Address of the Solr Web application, defaults to: http://localhost:8983.
+
+Please see the Reference Guide for more tools documentation:
+https://solr.apache.org/guide/solr/latest/deployment-guide/solr-control-script-reference.html
+
+ERROR: Solr did not start or was not reachable. Check the logs for errors.
+
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>solr.cmd status
+
+Found Solr process 17664 running on port 8983
+{
+  "solr_home":"C:\\Users\\infan\\Downloads\\solr-9.7.0\\solr-9.7.0\\server\\solr",
+  "version":"9.7.0 675a41516e3f3bacfc975590773e7abdca444ff4 - anshum - 2024-09-03 15:05:20",
+  "startTime":"Wed Oct 02 20:02:14 IST 2024",
+  "uptime":"0 days, 0 hours, 2 minutes, 11 seconds",
+  "memory":"109.1 MB (%21.3) of 512 MB"}
+
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>solr.cmd create -c employees
+WARNING: Using _default configset with data driven schema functionality. NOT RECOMMENDED for production use.
+         To turn off: bin\solr config -c employees -p 8983 -action set-user-property -property update.autoCreateFields -value false
+Option '-solrUrl','--solrUrl': Deprecated for removal since 9.7: Use --solr-url instead
+WARNING: URLs provided to this tool needn't include Solr's context-root (e.g. "/solr"). Such URLs are deprecated and support for them will be removed in a future release. Correcting from [http://localhost:8983/solr] to [http://localhost:8983/].
+Option '-confdir','--confdir': Deprecated for removal since 9.7: Use --conf-dir instead
+Option '-confdir','--confdir': Deprecated for removal since 9.7: Use --conf-dir instead
+Option '-confdir','--confdir': Deprecated for removal since 9.7: Use --conf-dir instead
+Option '-confdir','--confdir': Deprecated for removal since 9.7: Use --conf-dir instead
+Option '-confname','--confname': Deprecated for removal since 9.7: Use --conf-name instead
+
+Created new core 'employees'
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>Employee ID,Full Name,Job Title,Department,Business, Unit,Gender,Ethn
+icity,Age,Hire Date,Annual Salary,Bonus %,Country,City,Exit Date
+'Employee' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>bin/solr list
+'bin' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>solr list
+
+Invalid command-line option: list
+
+
+Usage: solr COMMAND OPTIONS
+       where COMMAND is one of: start, stop, restart, status, healthcheck, create, create_core, create_collection, delete, version, zk, auth, assert, config, export, api, package, post, postlogs
+
+  Standalone server example (start Solr running in the background on port 8984):
+
+    solr start -p 8984
+
+  SolrCloud example (start Solr running in SolrCloud mode using localhost:2181 to connect to Zookeeper, with 1g max heap size and remote Java debug options enabled):
+
+    solr start -c -m 1g -z localhost:2181 -a "-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044"
+
+  Omit '-z localhost:2181' from the above command if you have defined ZK_HOST in solr.in.cmd.
+
+Pass -help after any COMMAND to see command-specific usage information,
+  such as:    solr start -help or solr stop -help
+
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>post -c <employees> <"C:\Users\infan\Downloads\archive\Employee Sample Data 1.csv">
+< was unexpected at this time.
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>post -c employees C:\Users\infan\Downloads\archive\Employee Sample Data 1.csv
+'post' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>java -Durl=http://localhost:8983/solr/employees/update?commit=true -jar post.jar C:\Users\infan\Downloads\archive\Employee Sample Data 1.csv
+Error: Unable to access jarfile post.jar
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>post -c employees C:\Users\infan\Downloads\archive\Employee Sample Data 1.csv
+'post' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>curl -X POST -H "Content-Type: text/csv" --data-binary @"C:\Users\infan\Downloads\archive\Employee Sample Data 1.csv" "http://localhost:8983/solr/employees/update?commit=true"
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":2466
+  }
+}
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>curl "http://localhost:8983/solr/employees/select?q=*:*&indent=true"
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":0,
+    "params":{
+      "q":"*:*",
+      "indent":"true"
+    }
+  },
+  "response":{
+    "numFound":1262,
+    "start":0,
+    "numFoundExact":true,
+    "docs":[{
+      "Department":["Engineering"],
+      "Gender":["Male"],
+      "Ethnicity":["Asian"],
+      "Age":[47],
+      "Country":["United States"],
+      "City":["Columbus"],
+      "id":"7252a51d-479e-49a5-9f4b-b94e3ba62fcd",
+      "Employee_ID":["E02002"],
+      "Full_Name":["Kai Le"],
+      "Job_Title":["Controls Engineer"],
+      "Business_Unit":["Manufacturing"],
+      "Hire_Date":["2/5/2022"],
+      "Annual_Salary":["$92,368 "],
+      "Bonus__":["0%"],
+      "_version_":1811816433433182208,
+      "_root_":"7252a51d-479e-49a5-9f4b-b94e3ba62fcd"
+    },{
+      "Department":["Sales"],
+      "Gender":["Male"],
+      "Ethnicity":["Asian"],
+      "Age":[58],
+      "Country":["United States"],
+      "City":["Chicago"],
+      "id":"b41ab1ef-5e06-4bbf-ac38-f2f29626437f",
+      "Employee_ID":["E02003"],
+      "Full_Name":["Robert Patel"],
+      "Job_Title":["Analyst"],
+      "Business_Unit":["Corporate"],
+      "Hire_Date":["10/23/2013"],
+      "Annual_Salary":["$45,703 "],
+      "Bonus__":["0%"],
+      "_version_":1811816433531748352,
+      "_root_":"b41ab1ef-5e06-4bbf-ac38-f2f29626437f"
+    },{
+      "Department":["IT"],
+      "Gender":["Male"],
+      "Ethnicity":["Asian"],
+      "Age":[34],
+      "Country":["China"],
+      "City":["Shanghai"],
+      "id":"ec11f7a0-259d-4d22-a4d1-67ddef5afcd5",
+      "Employee_ID":["E02004"],
+      "Full_Name":["Cameron Lo"],
+      "Job_Title":["Network Administrator"],
+      "Business_Unit":["Research & Development"],
+      "Hire_Date":["3/24/2019"],
+      "Annual_Salary":["$83,576 "],
+      "Bonus__":["0%"],
+      "_version_":1811816433531748353,
+      "_root_":"ec11f7a0-259d-4d22-a4d1-67ddef5afcd5"
+    },{
+      "Department":["IT"],
+      "Gender":["Female"],
+      "Ethnicity":["Latino"],
+      "Age":[39],
+      "Country":["United States"],
+      "City":["Seattle"],
+      "id":"a6e14083-8544-4e27-97cc-b9129ef7d59d",
+      "Employee_ID":["E02005"],
+      "Full_Name":["Harper Castillo"],
+      "Job_Title":["IT Systems Architect"],
+      "Business_Unit":["Corporate"],
+      "Hire_Date":["4/7/2018"],
+      "Annual_Salary":["$98,062 "],
+      "Bonus__":["0%"],
+      "_version_":1811816433531748354,
+      "_root_":"a6e14083-8544-4e27-97cc-b9129ef7d59d"
+    },{
+      "Department":["Engineering"],
+      "Gender":["Female"],
+      "Ethnicity":["Latino"],
+      "Age":[42],
+      "Country":["United States"],
+      "City":["Austin"],
+      "id":"754dc8e6-fa6b-4814-880d-4f1f9d95a3f5",
+      "Employee_ID":["E02006"],
+      "Full_Name":["Harper Dominguez"],
+      "Job_Title":["Director"],
+      "Business_Unit":["Corporate"],
+      "Hire_Date":["6/18/2005"],
+      "Annual_Salary":["$175,391 "],
+      "Bonus__":["24%"],
+      "_version_":1811816433548525568,
+      "_root_":"754dc8e6-fa6b-4814-880d-4f1f9d95a3f5"
+    },{
+      "Department":["IT"],
+      "Gender":["Male"],
+      "Ethnicity":["Asian"],
+      "Age":[62],
+      "Country":["United States"],
+      "City":["Phoenix"],
+      "id":"e1fdfc60-5423-44f1-8b6d-92aa31ea845c",
+      "Employee_ID":["E02007"],
+      "Full_Name":["Ezra Vu"],
+      "Job_Title":["Network Administrator"],
+      "Business_Unit":["Manufacturing"],
+      "Hire_Date":["4/22/2004"],
+      "Annual_Salary":["$66,227 "],
+      "Bonus__":["0%"],
+      "Exit_Date":["2/14/2014"],
+      "_version_":1811816433677500416,
+      "_root_":"e1fdfc60-5423-44f1-8b6d-92aa31ea845c"
+    },{
+      "Department":["Accounting"],
+      "Gender":["Female"],
+      "Ethnicity":["Asian"],
+      "Age":[58],
+      "Country":["China"],
+      "City":["Chongqing"],
+      "id":"ae22407f-dfe5-4a14-aa48-89ff4862ef77",
+      "Employee_ID":["E02008"],
+      "Full_Name":["Jade Hu"],
+      "Job_Title":["Sr. Analyst"],
+      "Business_Unit":["Specialty Products"],
+      "Hire_Date":["6/27/2009"],
+      "Annual_Salary":["$89,744 "],
+      "Bonus__":["0%"],
+      "_version_":1811816433682743296,
+      "_root_":"ae22407f-dfe5-4a14-aa48-89ff4862ef77"
+    },{
+      "Department":["Finance"],
+      "Gender":["Male"],
+      "Ethnicity":["Asian"],
+      "Age":[62],
+      "Country":["China"],
+      "City":["Chengdu"],
+      "id":"f84ee826-e2c7-437c-9540-810f0a3b5026",
+      "Employee_ID":["E02009"],
+      "Full_Name":["Miles Chang"],
+      "Job_Title":["Analyst II"],
+      "Business_Unit":["Corporate"],
+      "Hire_Date":["2/19/1999"],
+      "Annual_Salary":["$69,674 "],
+      "Bonus__":["0%"],
+      "_version_":1811816433682743297,
+      "_root_":"f84ee826-e2c7-437c-9540-810f0a3b5026"
+    },{
+      "Department":["IT"],
+      "Gender":["Female"],
+      "Ethnicity":["Caucasian"],
+      "Age":[38],
+      "Country":["United States"],
+      "City":["Seattle"],
+      "id":"7fd49b8e-b7d5-4292-9342-a0b0e8e7c4f1",
+      "Employee_ID":["E02010"],
+      "Full_Name":["Gianna Holmes"],
+      "Job_Title":["System Administrator "],
+      "Business_Unit":["Manufacturing"],
+      "Hire_Date":["9/9/2011"],
+      "Annual_Salary":["$97,630 "],
+      "Bonus__":["0%"],
+      "_version_":1811816433682743298,
+      "_root_":"7fd49b8e-b7d5-4292-9342-a0b0e8e7c4f1"
+    },{
+      "Department":["Finance"],
+      "Gender":["Male"],
+      "Ethnicity":["Caucasian"],
+      "Age":[52],
+      "Country":["United States"],
+      "City":["Miami"],
+      "id":"2c8dada0-77b4-4eb4-b88b-e2ba8e5890ef",
+      "Employee_ID":["E02011"],
+      "Full_Name":["Jameson Thomas"],
+      "Job_Title":["Manager"],
+      "Business_Unit":["Specialty Products"],
+      "Hire_Date":["2/5/2015"],
+      "Annual_Salary":["$105,879 "],
+      "Bonus__":["10%"],
+      "_version_":1811816433682743299,
+      "_root_":"2c8dada0-77b4-4eb4-b88b-e2ba8e5890ef"
+    }]
+  }
+}
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>bin\solr.cmd stop
+The system cannot find the path specified.
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>solr.cmd stop
+
+ERROR: Must specify the port when trying to stop Solr, or use --all to stop all running nodes on this host.
+
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>solr.cmd --all stop
+
+Invalid command-line option: stop
+
+
+Usage: solr start [-f] [-c] [--host hostname] [-p port] [-d directory] [-z zkHost] [-m memory] [-e example] [-s solr.solr.home] [-t solr.data.home] [-a "additional-options"] [-V]
+
+  -f            Start Solr in foreground; default starts Solr in the background
+                  and sends stdout / stderr to solr-PORT-console.log
+
+  -c or --cloud Start Solr in SolrCloud mode; if -z not supplied and ZK_HOST not defined in
+                  solr.in.cmd, an embedded ZooKeeper instance is started on Solr port+1000,
+                  such as 9983 if Solr is bound to 8983
+
+  --host host   Specify the hostname for this Solr instance
+
+  -p port       Specify the port to start the Solr HTTP listener on; default is 8983
+"                  The specified port (SOLR_PORT) will also be used to determine the stop port"
+"                  STOP_PORT=(\$SOLR_PORT-1000) and JMX RMI listen port RMI_PORT=(\$SOLR_PORT+10000). "
+"                  For instance, if you set -p 8985, then the STOP_PORT=7985 and RMI_PORT=18985"
+
+  -d dir        Specify the Solr server directory; defaults to server
+
+  -z zkHost     Zookeeper connection string; only used when running in SolrCloud mode using -c
+                  If neither ZK_HOST is defined in solr.in.cmd nor the -z parameter is specified,
+                  an embedded ZooKeeper instance will be launched.
+                  Set the ZK_CREATE_CHROOT environment variable to true if your ZK host has a chroot path, and you want to create it automatically."
+
+  -m memory     Sets the min (-Xms) and max (-Xmx) heap size for the JVM, such as: -m 4g
+                  results in: -Xms4g -Xmx4g; by default, this script sets the heap size to 512m
+
+  -s dir        Sets the solr.solr.home system property; Solr will create core directories under
+                  this directory. This allows you to run multiple Solr instances on the same host
+                  while reusing the same server directory set using the -d parameter. If set, the
+                  specified directory should contain a solr.xml file, unless solr.xml exists in Zookeeper.
+                  This parameter is ignored when running examples (-e), as the solr.solr.home depends
+                  on which example is run. The default value is server/solr. If passed a relative dir
+                  validation with the current dir will be done before trying the default server/<dir>
+
+  -t dir        Sets the solr.data.home system property, where Solr will store index data in <instance_dir>/data subdirectories.
+                  If not set, Solr uses solr.solr.home for both config and data.
+
+  -e example    Name of the example to run; available examples:
+      cloud:          SolrCloud example
+      techproducts:   Comprehensive example illustrating many of Solr's core capabilities
+      schemaless:     Schema-less example (schema is inferred from data during indexing)
+      films:          Example of starting with _default configset and defining explicit fields dynamically
+
+  -a opts       Additional parameters to pass to the JVM when starting Solr, such as to setup
+                Java debug options. For example, to enable a Java debugger to attach to the Solr JVM
+                you could pass: -a "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=18983"
+                In most cases, you should wrap the additional parameters in double quotes.
+
+  -j opts       Additional parameters to pass to Jetty when starting Solr.
+                For example, to add configuration folder that jetty should read
+                you could pass: -j "--include-jetty-dir=/etc/jetty/custom/server/"
+                In most cases, you should wrap the additional parameters in double quotes.
+
+  --no-prompt   Don't prompt for input; accept all defaults when running examples that accept user input
+
+  -v and -q     Verbose (-v) or quiet (-q) logging. Sets default log level to DEBUG or WARN instead of INFO
+
+  -V/--verbose  Verbose messages from this script
+
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>netstat -ano | findstr :8983
+  TCP    127.0.0.1:8983         0.0.0.0:0              LISTENING       17664
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>taskkill /PID 17664 /F
+SUCCESS: The process with PID 17664 has been terminated.
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>netstat -ano | findstr :8983
+
+C:\Users\infan\Downloads\solr-9.7.0\solr-9.7.0\bin>
